@@ -14,7 +14,7 @@ class _UserDairyProductsState extends State<UserDairyProducts> {
     Product(
       productName: 'Yogurt',
       productId: '22897',
-      productQuantity: 5,
+      productQuantity: "5",
       date: DateTime.now().toString(),
     )
   ];
@@ -35,7 +35,6 @@ class _UserDairyProductsState extends State<UserDairyProducts> {
 
   @override
   Widget build(BuildContext context) {
-
     return DairyProductList(_sellerProducts);
   }
 }

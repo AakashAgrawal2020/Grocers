@@ -107,10 +107,9 @@ class NewDairyProduct extends StatelessWidget {
                 child: RaisedButton(
                   onPressed: () {
                     Product pd = new Product(
-                        productName: 'Aakash',
-                        productId: '5464545',
-                        date: '12-10-2019',
-                        productQuantity: 5);
+                        productName: productNameController.text,
+                        productId: productIdController.text,
+                        productQuantity: productQuantityController.text);
                     Navigator.pushNamed(context, '/UserDairyProducts',
                         arguments: pd);
                   },

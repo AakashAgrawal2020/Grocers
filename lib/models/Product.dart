@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class Product {
   final String productName;
   final String productId;
-  final int productQuantity;
+  final String productQuantity;
   final String date;
 
   Product({
