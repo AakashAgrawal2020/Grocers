@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widgets/NewDairyProduct.dart';
 import 'package:flutter_app/widgets/SignUpScreen.dart';
 
-import './UserDairyProducts.dart';
-
 void main() => runApp(MaterialApp(
+      home: new SplashScreen(),
       routes: <String, WidgetBuilder>{
-        '/UserDairyProducts': (context) => UserDairyProducts(),
+        '/NewDairyProduct': (context) => NewDairyProduct(),
       },
       title: "Grocers",
-      home: new SplashScreen(),
     ));
 
 class SplashScreen extends StatefulWidget {

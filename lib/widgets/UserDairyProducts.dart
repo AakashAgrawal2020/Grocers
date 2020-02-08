@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import './DairyProductList.dart';
 import '../models/Product.dart';
 
+
 class UserDairyProducts extends StatefulWidget {
   @override
   _UserDairyProductsState createState() => _UserDairyProductsState();
 }
 
 class _UserDairyProductsState extends State<UserDairyProducts> {
-  Product pd;
   final List<Product> _sellerProducts = [
     Product(
       productName: 'Yogurt',
@@ -19,22 +19,21 @@ class _UserDairyProductsState extends State<UserDairyProducts> {
     )
   ];
 
-  void _addNewTransaction() {
-    RouteSettings settings = ModalRoute.of(context).settings;
-    pd = settings.arguments;
-    final newPd = Product(
-        productName: this.pd.productName,
-        productId: this.pd.productId,
-        productQuantity: this.pd.productQuantity,
+  void _addNewProduct({String name, String id, String quantity}) {
+    final newProduct = Product(
+        productName: name,
+        productId: id,
+        productQuantity: quantity,
         date: DateTime.now().toString());
 
     setState(() {
-      _sellerProducts.add(newPd);
+      _sellerProducts.add(newProduct);
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    Navigator.pushNamed(context, '/NewDairyProduct', arguments: _addNewProduct);
     return DairyProductList(_sellerProducts);
   }
 }

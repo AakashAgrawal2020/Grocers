@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../models/Product.dart';
-
 class NewDairyProduct extends StatelessWidget {
   final List<String> j = [];
   final productNameController = TextEditingController();
@@ -10,6 +8,8 @@ class NewDairyProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    RouteSettings settings = ModalRoute.of(context).settings;
+    final Function addNewProduct = settings.arguments as Function;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -106,12 +106,11 @@ class NewDairyProduct extends StatelessWidget {
                 ),
                 child: RaisedButton(
                   onPressed: () {
-                    Product pd = new Product(
-                        productName: productNameController.text,
-                        productId: productIdController.text,
-                        productQuantity: productQuantityController.text);
-                    Navigator.pushNamed(context, '/UserDairyProducts',
-                        arguments: pd);
+                    addNewProduct(
+                      name: productNameController.text,
+                      id: productIdController.text,
+                      quanity: productQuantityController.text,
+                    );
                   },
                   color: Colors.lightGreenAccent[700],
                   child: Text(
