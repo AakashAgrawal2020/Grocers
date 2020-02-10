@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class NewDairyProduct extends StatelessWidget {
-  final List<String> j = [];
+  final Function _addNewProduct;
   final productNameController = TextEditingController();
   final productIdController = TextEditingController();
   final productQuantityController = TextEditingController();
 
+  NewDairyProduct(this._addNewProduct);
+
   @override
   Widget build(BuildContext context) {
-    RouteSettings settings = ModalRoute.of(context).settings;
-    final Function addNewProduct = settings.arguments as Function;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -106,11 +106,12 @@ class NewDairyProduct extends StatelessWidget {
                 ),
                 child: RaisedButton(
                   onPressed: () {
-                    addNewProduct(
-                      name: productNameController.text,
-                      id: productIdController.text,
-                      quanity: productQuantityController.text,
+                    _addNewProduct(
+                      productNameController.text,
+                      productIdController.text,
+                      productQuantityController.text,
                     );
+                    Navigator.of(context).pop();
                   },
                   color: Colors.lightGreenAccent[700],
                   child: Text(
