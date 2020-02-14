@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import 'package:flutter_app/widgets/HomeScreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SignUpScreen extends StatelessWidget {
   @override
@@ -19,52 +18,50 @@ class SignUpScreen extends StatelessWidget {
                 shape: BoxShape.rectangle,
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Expanded(
-                    flex: 2,
+//                  Expanded(
+//                    flex: 2,
+//                    child: Column(
+//                      crossAxisAlignment: CrossAxisAlignment.start,
+//                      children: <Widget>[
+////                        Container(
+////                          child: IconButton(
+////                            padding: EdgeInsets.only(left: 5, top: 25),
+////                            icon: Icon(Icons.arrow_back),
+////                            color: Colors.white,
+////                            iconSize: 40,
+////                            onPressed: () {},
+////                          ),
+////                        ),
+//                      ],
+//                    ),
+//                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Container(
-                          child: IconButton(
-                            padding: EdgeInsets.only(left: 5, top: 25),
-                            icon: Icon(Icons.arrow_back),
-                            color: Colors.white,
-                            iconSize: 40,
-                            onPressed: () {},
+                        new Container(
+                          width: 170,
+                          height: 170,
+                          decoration: new BoxDecoration(
+                            color: Colors.lightGreenAccent[700],
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                              fit: BoxFit.fill,
+                              image: new AssetImage('assets/GrocersLogo.PNG'),
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Expanded(
-                    flex: 6,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 35.0),
-                      child: Column(
-                        children: <Widget>[
-                          new Container(
-                            width: 170,
-                            height: 170,
-                            decoration: new BoxDecoration(
-                              color: Colors.lightGreenAccent[700],
-                              shape: BoxShape.circle,
-                              image: new DecorationImage(
-                                fit: BoxFit.fill,
-                                image: new AssetImage('assets/GrocersLogo.PNG'),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                      children: <Widget>[],
-                    ),
-                  ),
+//                  Expanded(
+//                    flex: 2,
+//                    child: Column(
+//                      children: <Widget>[],
+//                    ),
+//                  ),
                 ],
               ),
             ),

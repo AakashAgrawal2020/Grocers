@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widgets/SignUpScreen.dart';
 
+import './ProfileScreen.dart';
+
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
+//        routes: <String, WidgetBuilder>{
+//          '/Profile': (BuildContext context) => new ProfileScreen(),
+//        },
         home: new SplashScreen(),
         title: "Grocers",
       ),

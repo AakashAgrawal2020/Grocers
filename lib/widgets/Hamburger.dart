@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './ProfileScreen.dart';
+
 class Hamburger extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,12 @@ class Hamburger extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileScreen()),
+              );
+              // Navigator.pop(context);
+
               // Update the state of the app.
               // ...
             },

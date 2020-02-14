@@ -12,7 +12,9 @@ class Payments extends StatelessWidget {
           size: 40,
           color: Colors.white,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pop(context);
+        },
       ),
       title: Text(
         "Payments",

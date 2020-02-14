@@ -5,40 +5,42 @@ class Support extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.lightGreenAccent[700],
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              size: 40,
-              color: Colors.white,
-            ),
-            onPressed: () {},
+      backgroundColor: Colors.lightGreenAccent[700],
+      leading: IconButton(
+        icon: Icon(
+          Icons.arrow_back,
+          size: 40,
+          color: Colors.white,
+        ),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      title: Text(
+        "Support",
+        style: TextStyle(
+          fontSize: 30,
+          color: Colors.white,
+        ),
+      ),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.search,
+            size: 30,
+            color: Colors.white,
           ),
-          title: Text(
-            "Support",
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.white,
-            ),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: Icon(
+            Icons.notifications,
+            size: 30,
+            color: Colors.white,
           ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 30,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.notifications,
-                size: 30,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-          ],
-        ));
+          onPressed: () {},
+        ),
+      ],
+    ));
   }
 }
